@@ -26,9 +26,18 @@ import {
   addBasePlugins,
    TweakpaneUiPlugin, AssetManagerBasicPopupPlugin, CanvasSnipperPlugin,
 } from "webgi";
-
+import { scrollAnimation } from "../../lib/scroll-animation.js";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 function WebgiViewer () {
   const canvasRef = useRef(null);
+  const memoizedScrollAnimation = useCallback(
+    (position, target,onUpdate)=> {
+        if (position && target && onUpdate) {
+          scrollAnimation(position, target,onUpdate);   
+        }
+}, []);
   const setupViewer = useCallback(async () => {
     // Initialize the viewer
     const viewer = new ViewerApp({
