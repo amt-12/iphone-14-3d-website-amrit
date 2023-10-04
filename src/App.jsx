@@ -2,6 +2,7 @@ import DisplaySection from "./assets/components/DisplaySection";
 import Jumbotron from "./assets/components/Jumbotron";
 import Nav from "./assets/components/Nav";
 import SoundSection from "./assets/components/SoundSection";
+import WebgiViewer from "./assets/components/WebgiViewer";
 
 const App=()=> {
 
@@ -11,6 +12,8 @@ const App=()=> {
       <Jumbotron/>
       <SoundSection/>
       <DisplaySection/>
+      <WebgiViewer/>
+
 
 
 
